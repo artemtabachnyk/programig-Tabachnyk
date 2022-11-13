@@ -1,0 +1,320 @@
+Звіт
+
+	Табачник Артем Анатолійович
+	Група: КН-922В
+	Лабораторна робота: №2
+	Тема роботи: Основи debug процесу
+
+
+
+
+Хід роботи
+
+
+
+	1. Реєстрація на загальнодоступній системі github.
+
+		Що треба зробити:
+		Зареєструватися на github за посиланням: https://github.com
+
+		Як треба зробити:
+		Для цього потрібно перейти за посиланням та виконати усі пункти реєстрації.
+
+		Результат:
+		У результаті маємо профіль на github. 
+
+
+	2.Створення приватного репозиторія та додання викладача у співавторство.
+
+		Що треба зробити:
+		Створити приватний репозиторій на github та додати викладача у співавторство.
+
+		Як треба зробити:
+		Переходимо до власного профілю, натискаємо repositories-new. У repository name вводимо programming-ваше прізвище,
+                Вибираємо пункт "private" і создаємо репозиторій, натиснувши на кнопку "create repository".
+                
+                Щоб додати викладача, заходимо у власний репозиторій на github, далі settings-collaborators-add people
+                та вводимо нік викладача(Veronika-Brechko).
+
+		Результат:
+		Маємо власний репозиторій на github з доданим викладачем у співавторство.
+
+
+	3. Клонування власного проекту з github.
+
+		Що треба зробити:
+		Клонувати створений на github репозиторій в Ubuntu Linux. 
+
+		Як треба зробити:
+		Для цього треба запустити термінал та ввести наступну команду:
+		git clone https://github.com/rtemtabachnyk/programig-Tabachnyk
+		
+		Далі ввести нік та пароль на github.
+
+		Результат:
+		У результаті маємо склонований репозиторій, готовий до роботи.
+
+
+	4. Створення каталогів у своєму репозиторії.
+
+		Що треба зробити:
+		Створити каталог lab02 і вже в ньому каталог src.
+
+
+		Як треба зробити:
+		Пишемо у терміналі команди:
+		cd programig-Tabachnyk
+		mkdir lab02
+		mkdir lab02/src
+
+		Результат:
+		└── lab02
+                    └── src
+		Маємо потрібні каталоги для подальшої роботи.
+		
+
+
+	5. Копіювання елементів.
+
+		Що треба зробити:
+		
+		Скопіювати наступні елементи з проекта sample_project.
+		файл .clang-format до кореня репозиторія
+		файл .clang-tidy до кореня репозиторія
+		файл .gitlab-ci.yml до кореня репозиторія
+		файл Doxyfile з каталогу lab00 проекта sample_project до каталогу lab02 репозиторія
+		файл Makefile з каталогу lab00 проекта sample_project до каталогу lab02 репозиторія
+		файл README.md з каталогу lab00 проекта sample_project до каталогу lab02 репозиторія
+		каталог src з каталогу lab00 проекта sample_project до каталогу lab02 репозиторія
+
+		Як треба зробити:
+		
+		Виконуємо команди:
+		sudo cp -R sample_project/.clang-format programig-Tabachnyk
+		sudo cp -R sample_project/.clang-tidy programig-Tabachnyk
+		sudo cp -R sample_project/.gitlab-ci.yml programig-Tabachnyk
+		sudo cp sample_project/lab00/Doxyfile programig-Tabachnyk/lab02
+		sudo cp sample_project/lab00/Makefile programig-Tabachnyk/lab02
+                sudo cp sample_project/lab00/README.md programig-Tabachnyk/lab02
+		sudo cp -r sample_project/lab00/src programig-Tabachnyk/lab02
+		
+
+		Результат:
+		tree
+		└── lab02
+    		├── Doxyfile
+    		├── Makefile
+    		├── README.md
+    		└── src
+        		├── lib.c
+        		├── lib.h
+        		└── main.c
+
+
+
+
+		2 directories, 7 files
+
+
+	6. Фіксування змін.
+
+		Що треба зробити:
+		Зафіксувати зміни після копіювання.
+
+		Як треба зробити:
+		У корені репозиторія вводи команду: git commit "Initial copy of sample_project" 
+
+		Результат:
+		git commit "Initial copy of sample_project" 
+
+		[main (корневой коммит) 7fadaaf] Initial copy of sample_project
+ 		[main a63ea4c] Initial copy of sample_project
+ 		9 files changed, 382 insertions(+)
+ 		create mode 100644 .clang-format
+ 		create mode 100644 .clang-tidy
+ 		create mode 100644 .gitlab-ci.yml
+ 		create mode 100644 lab02/Doxyfile
+ 		create mode 100644 lab02/Makefile
+ 		create mode 100644 lab02/README.md
+ 		create mode 100644 lab02/src/lib.c
+ 		create mode 100644 lab02/src/lib.h
+ 		create mode 100644 lab02/src/main.c
+
+
+
+	7. Зміна коду.
+
+		Що треба зробити:
+		Змінити код, додавши новий тип тварини - "людина".
+
+		Як треба зробити:
+		
+		У файлі lib.h додаємо новий animal_type HUMAN;
+		У файлі lib.c додаємо новий кейс HUMAN.
+		
+		Результат:
+		enum animal_type {
+        	CHICKEN, /**< Курка */
+       		PIG, /**< Свиня */
+        	COW, /**< Корова */
+        	DOG, /**< Собака */
+        	CAT, /**< Кіт */
+        	HUMAN, /**< Людина */
+                ANIMAL_TYPE_COUNT /**< Кількість тварин */
+};
+
+		switch (type) {
+        case CHICKEN:
+                result = "Курка";
+                break;
+        case CAT:
+                result = "Кіт";
+                break;
+        case DOG:
+                result = "Собака";
+                break;
+        case COW:
+                result = "Корова";
+                break;
+        case PIG:
+                result = "Свиня";
+                break;
+        case HUMAN:
+                result = "Людина";
+                break;
+        default:
+                result = "N/A";
+        }
+        return result;
+}
+
+		make clean prep compile check
+		
+		./main.bin
+	Інформація про тварину №01: Корова: зріст = 108 см, маса = 28 гр. 
+	Інформація про тварину №02: Свиня: зріст = 15 см, маса = 96 гр. 
+	Інформація про тварину №03: Кіт: зріст = 99 см, маса = 108 гр. 
+	Інформація про тварину №04: Собака: зріст = 10 см, маса = 28 гр. 
+	Інформація про тварину №05: Людина: зріст = 23 см, маса = 60 гр. 
+	Інформація про тварину №06: Корова: зріст = 52 см, маса = 11 гр. 
+	Інформація про тварину №07: Собака: зріст = 88 см, маса = 99 гр. 
+	Інформація про тварину №08: Корова: зріст = 71 см, маса = 107 гр. 
+	Інформація про тварину №09: Кіт: зріст = 89 см, маса = 52 гр. 
+	Інформація про тварину №10: Свиня: зріст = 20 см, маса = 52 гр. 
+
+
+
+		
+
+	8. Зробити дебаггінг
+
+		Що треба зробити:
+		Відкрити в відлагоднику lldb виконуючий файл, зупинитися на будь-якій строці та визначити значення змінних.
+
+		Як треба зробити:
+		Переходимо у корінь вашого репозиторія та вводимо:
+		lldb /lab02/dist/main.bin
+		Traceback (most recent call last):
+  		File "<string>", line 1, in <module>
+		ModuleNotFoundError: No module named 'lldb.embedded_interpreter'
+		(lldb) target create "lab02/dist/main.bin"
+		Current executable set to '/home/artem/programig-Tabachnyk/lab02/dist/main.bin' (x86_64).
+		(lldb) l
+		(lldb) l
+   		49   }
+		(lldb) l
+		(lldb) l 
+
+		
+		Результат:
+   1    /**l
+   2     * @mainpage
+   3     * # Загальне завдання
+   4     * 1. **Сформувати** функцию, що генерирує структуру із залученням механізму
+   5     * випадкової генерації даних (прикладная галузь вказана в індивідуальному
+   6     * завданні);
+   7     *
+   8     * 2. **Сформувати** функцію, яка буде виводити масив структур на екран
+   9     *
+   10    * @author Davydov V.
+
+(lldb) l
+   11  	 * @date 14-apr-2020
+   12    * @version 1.3
+   13    */
+   14  
+   15   /**
+   16    * @file main.c
+   17    * @brief Файл з демонстрацією роботи структури {@link animal} та методів
+   18    * оперування ним.
+   19    *
+   20    * @author Davydov V.
+   21    * @date 14-apr-2020
+
+(lldb) l
+   21  	 * @date 14-apr-2020
+   22  	 * @version 1.3
+   23  	 */
+   24  	
+   25  	#include "lib.h"
+   26  	
+   27  	/**
+   28  	 * Головна функція.
+   29  	 *
+   30  	 * Послідовність дій:
+(lldb) l
+   31  	 * - створення масиву із {@link ANIMAL_COUNT} тварин
+   32  	 * - генерація даних для кожної тварини шляхом виклика функції
+   33  	 * {@link generate_animal}
+   34  	 * - вивід даних про всіх тварин на екран за допомогою функції
+   35  	 * {@link show_animals}
+   36  	 * @return успішний код повернення з програми (0)
+   37  	 */
+   38  	int main()
+   39  	{
+   40  		srand((unsigned int)time(0));
+(lldb) l
+   41  		struct animal animals[ANIMAL_COUNT];
+   42  	
+   43  		for (unsigned int i = 0; i < ANIMAL_COUNT; i++) {
+   44  			generate_animal(&animals[i]);
+   45  		}
+   46  		show_animals(animals, ANIMAL_COUNT);
+   47  	
+   48  		return 0;
+   49  	}
+
+	9. Фіксування змін.
+	
+	git add .
+	git commit -m "add variable animal_human" 
+	[main 5eeb1fa] add variable animal_human
+        4 files changed, 8 insertions(+)
+        create mode 100644 .gitignore
+        create mode 100644 README.md
+        rename lab01/{ => doc}/lab01.txt (100%)
+        create mode 100644 lab02/doc/lab02.txt
+	
+	10. Компіляція з інформацією про відлагодження перевіряє код на наявність помилок.
+	
+	11. Завантаження змін.
+	Що треба зробити:
+	Завантажити зміни командую git push.
+	
+	Як треба зробити:
+	Вводимо команду git push --set-upstream origin main
+	
+	Результат:
+	Username for 'https://github.com': artemtabachnyk
+	Password for 'https://github.com':  artemtabachnyk09@gmail.com 
+	Enumerating objects: 14, виконано.
+	Підрахунок об’єктів: 100% (14/14), виконано.
+	Delta compression using up to 2 threads
+	Стиснення об’єктів: 100% (13/13), виконано.
+	Запис об’єктів: 100% (13/13), 5.94 KiB | 5.94 MiB/s, виконано.
+	Total 13 (delta 0), reused 0 (delta 0), pack-reused 0
+	To https://github.com/artemtabachnyk/programig-Tabachnyk
+   	5e46e83..a63ea4c  main -> main
+
+
+ 
