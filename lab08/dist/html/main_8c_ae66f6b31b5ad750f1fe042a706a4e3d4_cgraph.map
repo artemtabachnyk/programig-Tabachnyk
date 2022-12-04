@@ -1,0 +1,7 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title="Основна функція main." alt="" coords="5,81,60,108"/>
+<area shape="rect" id="node2" href="$main_8c.html#a57b4e49796d3daf8994ec0dc4af86789" title="Фунція в якій буде виконуватися основна дія(Шукати просте чи складене число)" alt="" coords="108,5,180,32"/>
+<area shape="rect" id="node3" href="$lab06_8c.html#a84e4437f43bda4dd8f4cabda651f8eb7" title="Функція яка видає рандомне ціле число" alt="" coords="108,56,180,83"/>
+<area shape="rect" id="node4" href="$lab06_8c.html#a6b7752d0b6df80b573e758700c081ab5" title="Фунція за допомогою якої рандомне число ми прив&#39;язуємо до системного часу" alt="" coords="115,107,173,133"/>
+<area shape="rect" id="node5" href="$lab06_8c.html#aa560fa38ca94599aa767ccb916e9bce7" title="Фунція за допомогою якої рандомне число ми прив&#39;язуємо до системного часу" alt="" coords="118,157,170,184"/>
+</map>
