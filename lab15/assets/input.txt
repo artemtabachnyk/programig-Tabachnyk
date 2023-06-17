@@ -1,0 +1,4 @@
+3
+yes no Philips 5 60 2700 A E27
+no no Osram 3 40 3000 A+ E14
+yes no Samsung 2 75 5000 A E27

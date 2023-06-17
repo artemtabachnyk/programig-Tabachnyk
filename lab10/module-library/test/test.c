@@ -1,9 +1,17 @@
+/**
+ * @file test.c
+ * @brief Файл з тестами для перевірки функції знаходження послідовності Фібоначчі.
+ */
+
 #include <stdlib.h>
 #include "lib.h"
 #include <check.h>
 
 #define DATA_SIZE 10
 
+/**
+ * @brief Тест перевірки функції findFibonachi().
+ */
 START_TEST(test_findFibonachi)
 {
     int expected_Num = 10;
@@ -21,10 +29,18 @@ START_TEST(test_findFibonachi)
 }
 END_TEST
 
+/**
+ * @brief Головна функція для запуску тестів.
+ *
+ * Створює тестовий набір, додає тестовий випадок, запускає виконання тестів
+ * та повертає код успішного або невдалого виконання тестів.
+ *
+ * @return int Код успішного або невдалого виконання тестів.
+ */
 int main(void)
 {
     Suite *s = suite_create("Programing");
-    TCase *tc_core = tcase_create("lab010");
+    TCase *tc_core = tcase_create("lab09");
 
     tcase_add_test(tc_core, test_findFibonachi);
     suite_add_tcase(s, tc_core);

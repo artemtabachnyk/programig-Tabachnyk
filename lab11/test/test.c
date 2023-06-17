@@ -1,9 +1,17 @@
+/**
+ * @file test.c
+ * @brief Тестовий файл для перевірки функції sort.
+ */
+
 #include <stdlib.h>
 #include <check.h>
 #include "lib.h"
 
 #define DATA_SIZE 10
 
+/**
+ * @brief Тестова функція для перевірки функції sort.
+ */
 START_TEST(test_flatten_and_sort)
 {
     int N = 3;
@@ -32,8 +40,16 @@ START_TEST(test_flatten_and_sort)
     }
     free(matrix);
 }
-END_TEST
 
+/**
+ * @brief Функція main, яка викликає тести.
+ *
+ * Функція створює тести та запускає їх за допомогою фреймворка Check.
+ * Після виконання тестів повертається код успішного завершення (0),
+ * якщо всі тести пройшли успішно, або код невдачі (1) в іншому випадку.
+ *
+ * @return Код успішного виконання тестів.
+ */
 int main(void)
 {
     Suite* s = suite_create("Programing");
